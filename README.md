@@ -9,4 +9,4 @@ Allows Linking Multiple Discord Server Channels For Full-Duplex Communication
 
 Any server which has done the same will be able to receive and send messages from these channels.
 
-(https://spawningpool.net/images/atu_example.PNG)
+[example server message](https://spawningpool.net/images/atu_example.PNG)
