@@ -10,3 +10,7 @@ Allows Linking Multiple Discord Server Channels For Full-Duplex Communication
 Any server which has done the same will be able to receive and send messages from these channels.
 
 ![example server message](https://spawningpool.net/images/atu_example.PNG)
+
+Current limitations:
+* All severs connected will broadcast to all others. This functions as every server publishes to the same exchange. This could be expanded in the future.
+* There is no authentication for servers joining. Any server that wishes to do so may.
