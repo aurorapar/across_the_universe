@@ -9,7 +9,7 @@ from discord.ext.commands import Bot
 from .commands import set_bot_channel
 from .dtos import ChatEmbed, GuildState
 from .queue_handlers.publisher import Publisher
-from .queue_handlers.subscriber3 import Subscriber
+from .queue_handlers.subscriber import Subscriber
 from .handlers import handle_typed_message
 from .settings import BOT_USERNAME, SYNC_ON_MESSAGE, RESYNC_ALLOWED
 
@@ -85,6 +85,8 @@ class DiscordBot(Bot):
                 subscriber.message_queue.task_done()
                 message = json.loads(message)
                 for guild in self.guilds:
+                    if guild.name == message["source_server"]:
+                        continue
                     channel = guild.get_channel(GuildState(subscriber.discord_server_id, guild.name).channel_id)
                     if not channel:
                         print(f" [***] Could not get channel for guild {guild.name}")
