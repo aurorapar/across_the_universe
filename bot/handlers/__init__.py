@@ -1,0 +1,1 @@
+from ..handlers.message_handler import handle_typed_message
